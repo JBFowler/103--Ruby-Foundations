@@ -125,18 +125,18 @@ class TodoList
 end
 
 # given
-todo1 = Todo.new("Buy milk")
-todo2 = Todo.new("Clean room")
-todo3 = Todo.new("Go to gym")
-list = TodoList.new("Today's Todos")
+# todo1 = Todo.new("Buy milk")
+# todo2 = Todo.new("Clean room")
+# todo3 = Todo.new("Go to gym")
+# list = TodoList.new("Today's Todos")
 
 # ---- Adding to the list -----
 
 # add
-list.add(todo1)                 # adds todo1 to end of list, returns list
-list.add(todo2)                 # adds todo2 to end of list, returns list
-list.add(todo3)                 # adds todo3 to end of list, returns list
-list.add(1)                     # raises TypeError with message "Can only add Todo objects"
+# list.add(todo1)                 # adds todo1 to end of list, returns list
+# list.add(todo2)                 # adds todo2 to end of list, returns list
+# list.add(todo3)                 # adds todo3 to end of list, returns list
+# list.add(1)                     # raises TypeError with message "Can only add Todo objects"
 
 # <<
 # same behavior as add
@@ -144,50 +144,50 @@ list.add(1)                     # raises TypeError with message "Can only add To
 # ---- Interrogating the list -----
 
 # size
-list.size                       # returns 3
-
+# list.size                       # returns 3
+# list.add_to
 # first
-list.first                      # returns todo1, which is the first item in the list
+# list.first                      # returns todo1, which is the first item in the list
 
 # last
-list.last                       # returns todo3, which is the last item in the list
+# list.last                       # returns todo3, which is the last item in the list
 
 # ---- Retrieving an item in the list ----
 
 # item_at
-list.item_at                    # raises ArgumentError
-list.item_at(1)                 # returns 2nd item in list (zero based index)
-list.item_at(100)               # raises IndexError
+# list.item_at                    # raises ArgumentError
+# list.item_at(1)                 # returns 2nd item in list (zero based index)
+# list.item_at(100)               # raises IndexError
 
 # ---- Marking items in the list -----
 
 # mark_done_at
-list.mark_done_at               # raises ArgumentError
-list.mark_done_at(1)            # marks the 2nd item as done
-list.mark_done_at(100)          # raises IndexError
+# list.mark_done_at               # raises ArgumentError
+# list.mark_done_at(1)            # marks the 2nd item as done
+# list.mark_done_at(100)          # raises IndexError
 
 # mark_undone_at
-list.mark_undone_at             # raises ArgumentError
-list.mark_undone_at(1)          # marks the 2nd item as not done,
-list.mark_undone_at(100)        # raises IndexError
+# list.mark_undone_at             # raises ArgumentError
+# list.mark_undone_at(1)          # marks the 2nd item as not done,
+# list.mark_undone_at(100)        # raises IndexError
 
 # ---- Deleting from the the list -----
 
 # shift
-list.shift                      # removes and returns the first item in list
+# list.shift                      # removes and returns the first item in list
 
 # pop
-list.pop                        # removes and returns the last item in list
+# list.pop                        # removes and returns the last item in list
 
 # remove_at
-list.remove_at                  # raises ArgumentError
-list.remove_at(1)               # removes and returns the 2nd item
-list.remove_at(100)             # raises IndexError
+# list.remove_at                  # raises ArgumentError
+# list.remove_at(1)               # removes and returns the 2nd item
+# list.remove_at(100)             # raises IndexError
 
 # ---- Outputting the list -----
 
 # to_s
-list.to_s                      # returns string representation of the list
+# list.to_s                      # returns string representation of the list
 
 # ---- Today's Todos ----
 # [ ] Buy milk
@@ -200,3 +200,16 @@ list.to_s                      # returns string representation of the list
 # [ ] Buy milk
 # [X] Clean room
 # [ ] Go to gym
+
+todo1 = Todo.new("Buy milk")
+todo2 = Todo.new("Clean room")
+todo3 = Todo.new("Go to gym")
+
+list = TodoList.new("Today's Todos")
+list.add(todo1)
+list.add(todo2)
+list.add(todo3)
+
+list.each do |todo|
+  puts todo                   # calls Todo#to_s
+end
