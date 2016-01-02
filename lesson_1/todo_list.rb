@@ -122,6 +122,21 @@ class TodoList
     @todos
   end
 
+  def each
+    @todos.each do |todo|
+      yield(todo)
+    end
+    self
+  end
+
+  def select
+    list = TodoList.new(title)
+    each do |todo|
+      list.add(todo) if yield(todo)
+    end
+    list
+  end
+
 end
 
 # given
@@ -213,3 +228,9 @@ list.add(todo3)
 list.each do |todo|
   puts todo                   # calls Todo#to_s
 end
+
+todo1.done!
+
+results = list.select { |todo| todo.done? }    # you need to implement this method
+
+puts results.inspect
