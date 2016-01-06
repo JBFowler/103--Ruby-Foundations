@@ -1,15 +1,15 @@
-def reduce(array, start = 0)
-  counter = 0
-  total = start
+# def reduce(array, start = 0)
+#   counter = 0
+#   total = start
 
-  while counter < array.size
-    current_value = array[counter] # The first two lines could simply be written as: total = yield(total, array[counter])
-    total = yield(total, current_value)
-    counter += 1
-  end
+#   while counter < array.size
+#     current_value = array[counter] # The first two lines could simply be written as: total = yield(total, array[counter])
+#     total = yield(total, current_value)
+#     counter += 1
+#   end
 
-  total
-end
+#   total
+# end
 
 array = [1, 2, 3, 4, 5]
 
