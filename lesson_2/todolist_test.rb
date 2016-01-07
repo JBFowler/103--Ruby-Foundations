@@ -18,6 +18,8 @@ class TodoListTest < MiniTest::Test
     @list.add(@todo3)
   end
 
-  # Your tests go here. Remember they must start with "test_"
+  def test_to_a
+    assert_equal(@todos, @list.to_a)
+  end
 
 end
