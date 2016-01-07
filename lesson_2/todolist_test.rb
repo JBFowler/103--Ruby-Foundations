@@ -144,4 +144,17 @@ class TodoListTest < MiniTest::Test
     # @list.each { |todo| result << todo }
     # assert_equal([@todo1, @todo2, @todo3], result)
   end
+
+  def test_each_return_object
+    assert_equal(@list, @list.each { |todo| puts "World" })
+  end
+
+  def test_select
+    @todo1.done!
+    list = Todo.new(@list.title)
+    list.add(@todo1)
+
+    assert_equal(list.title, @list.title)
+    assert_equal(list.to_s, @list.select { |todo| todo.done? }.to_s)
+  end
 end
