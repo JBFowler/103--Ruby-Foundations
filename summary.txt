@@ -1,0 +1,15 @@
+Summary for Course 103
+
+Course 103 was a very interesting course, as it discussed blocks in a way that gives you a deeper understanding of the ruby language.  While this could have been something that Launch School could have easily skipped over, including it gives the student an appreciation of what the instructors are trying to do with your programming know how.  
+
+I found the explanation of the block mechanics especially helpful, especially when we got to build our own.  This only creates new possibilities for us as a programmer.  I also loved the introduction of minitest.  I am not personally familiar with minitest, but I am familiar with Rspec.  I think an early introduction to minitest, rather than relying on the lessons of rspec later down the road is a great way to get the students feet wet with testing.  
+
+What didn't work well for me was understanding the relationship with Procs and blocks, and what exactly a proc is.  I still am unclear of why a proc must be changed to a block before being executed (i.e. list.select(&:done?), because I thought the proc object held a block as a state.  I have had to look further into this through the internet, but it still is confusing to me.  
+
+I retained the concepts very well.  Understanding how to use the methods we wrote for blocks was confusing at first, but once I understand how to implement their functionality, I got very excited of what I would be able to do with methods I write in the future for blocks.
+
+The most difficult parts were writing the blocks for the todo project, but it wasn't that difficult compared to exercises we have had in past courses.  It just took me a little time to understand the functionality of block methods.
+
+The easiest part was probably writing the test, but not so much in their difficulty as much as how much I enjoyed writing the tests.  So they were easy in the sense of desire to write the code.
+
+As I said above, I really enjoyed minitest.  It's easy to understand and use, as well as quite enjoyable.  The rspec type form may be a little easier once you understand what's going on, but I have yet to explore that side of minitest.
