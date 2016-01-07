@@ -121,4 +121,16 @@ class TodoListTest < MiniTest::Test
 
     assert_equal(output, @list.to_s)
   end
+
+  def test_to_s_all_done
+    @list.done!
+    output = <<-OUTPUT.chomp.gsub /^\s+/, ""
+    ---- Today's Todos ----
+    [X] Buy milk
+    [X] Clean room
+    [X] Go to gym
+    OUTPUT
+
+    assert_equal(output, @list.to_s)
+  end
 end
