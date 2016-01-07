@@ -92,4 +92,21 @@ class TodoListTest < MiniTest::Test
     @list.done!
     assert_equal(true, @list.done?)
   end
+
+  def test_remove_at
+    @list.remove_at(1)
+    assert_equal([@todo1, @todo3], @list.to_a)
+    assert_raises(IndexError) { @list.remove_at(5) }
+  end
+
+  def test_to_s
+    output = <<-OUTPUT.chomp.gsub /^\s+/, ""
+    ---- Today's Todos ----
+    [ ] Buy milk
+    [ ] Clean room
+    [ ] Go to gym
+    OUTPUT
+
+    assert_equal(output, @list.to_s)
+  end
 end
