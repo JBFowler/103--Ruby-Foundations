@@ -62,4 +62,9 @@ class TodoListTest < MiniTest::Test
     assert_equal(4, @list.size)
     assert_equal(todos, @list.to_a)
   end
+
+  def test_item_at
+    assert_equal(@todo1, @list.item_at(0))
+    assert_raises(IndexError) { @list.item_at(5) }
+  end
 end
