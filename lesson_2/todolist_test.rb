@@ -33,4 +33,25 @@ class TodoListTest < MiniTest::Test
   def test_last
     assert_equal(@todo3, @list.last)
   end
+
+  def test_shift
+    todo = @list.shift
+    assert_equal(@todo1, todo)
+    assert_equal([@todo2, @todo3], @list.to_a)
+  end
+
+  def test_pop
+    todo = @list.pop
+    assert_equal(@todo3, todo)
+    assert_equal([@todo1, @todo2], @list.to_a)
+  end
+
+  def test_done?
+    assert_equal(false, @list.done?)
+  end
+
+  def test_raise_add_non_todo_object
+    assert_raises(TypeError) { @list.add(1) }
+    assert_raises(TypeError) { @list.add('string') }
+  end
 end
