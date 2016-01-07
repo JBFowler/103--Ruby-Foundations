@@ -54,4 +54,12 @@ class TodoListTest < MiniTest::Test
     assert_raises(TypeError) { @list.add(1) }
     assert_raises(TypeError) { @list.add('string') }
   end
+
+  def test_add
+    todo = Todo.new('title')
+    @list << todo
+    todos = @todos << todo
+    assert_equal(4, @list.size)
+    assert_equal(todos, @list.to_a)
+  end
 end
