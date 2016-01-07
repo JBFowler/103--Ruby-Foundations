@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 require "minitest/reporters"
+require 'simplecov'
+SimpleCov.start
 Minitest::Reporters.use!
 
 require_relative 'todo_list'
@@ -151,7 +153,7 @@ class TodoListTest < MiniTest::Test
 
   def test_select
     @todo1.done!
-    list = Todo.new(@list.title)
+    list = TodoList.new(@list.title)
     list.add(@todo1)
 
     assert_equal(list.title, @list.title)
