@@ -11,6 +11,7 @@ class CarTest < MiniTest::Test
   end
 
   def test_bad_wheels
+    skip # Can pass string into to specify skip message
     car = Car.new
     assert_equal(3, car.wheels)
   end
